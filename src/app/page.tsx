@@ -42,7 +42,7 @@ const HomePage = () => {
         setCurrentNotification((prev) => ({ ...prev, visible: false }));
       }, 1500);
     };
-    const initialTimeout = setTimeout(showNotification, 3000);
+    const initialTimeout = setTimeout(showNotification, 800);
     const notificationInterval = setInterval(() => {
       showNotification();
     }, 10000);
@@ -98,16 +98,16 @@ const HomePage = () => {
               href="https://chat.whatsapp.com/KFFvxdGfCb02HAH4dR1JNS"
               target="_blank"
               rel="noopener noreferrer"
-              className="relative group flex w-full items-center justify-center gap-4 rounded-2xl bg-gradient-to-br from-[#25D366] to-[#128C7E] px-8 py-5 text-white shadow-2xl transition-all duration-300 transform select-none active:scale-[0.98] sm:hover:scale-[1.02] sm:hover:shadow-[0_20px_60px_-15px_rgba(37,211,102,0.6)] overflow-hidden"
+              className="relative group flex w-full items-center justify-center gap-3 rounded-2xl bg-gradient-to-br from-[#25D366] to-[#128C7E] px-6 py-3.5 text-white shadow-2xl transition-all duration-300 transform select-none active:scale-[0.98] sm:hover:scale-[1.02] sm:hover:shadow-[0_20px_60px_-15px_rgba(37,211,102,0.6)] overflow-hidden"
             >
               {/* Efeito de shine que passa pelo botão */}
               <div className="absolute inset-0 -translate-x-full animate-[shimmer_3s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
 
               {/* Ícone do WhatsApp */}
-              <div className="relative flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-white shadow-lg">
+              <div className="relative flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-white shadow-lg">
                 <svg
                   viewBox="0 0 24 24"
-                  className="h-8 w-8 text-[#25D366]"
+                  className="h-6 w-6 text-[#25D366]"
                   fill="currentColor"
                   aria-hidden="true"
                 >
@@ -117,17 +117,17 @@ const HomePage = () => {
 
               {/* Texto do botão */}
               <div className="relative flex-1 text-left">
-                <div className="text-lg font-black tracking-wide sm:text-xl">
+                <div className="text-base font-black tracking-wide sm:text-lg">
                   ENTRAR NO GRUPO VIP
                 </div>
-                <div className="text-sm font-semibold text-white/90 sm:text-base">
+                <div className="text-xs font-semibold text-white/90 sm:text-sm">
                   🔥 Vagas Limitadas • Acesso Exclusivo
                 </div>
               </div>
 
               {/* Ícone de seta */}
               <svg
-                className="relative h-6 w-6 flex-shrink-0 transition-transform duration-300 group-active:translate-x-1 sm:group-hover:translate-x-1"
+                className="relative h-5 w-5 flex-shrink-0 transition-transform duration-300 group-active:translate-x-1 sm:group-hover:translate-x-1"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -149,6 +149,8 @@ const HomePage = () => {
               className="h-5 w-5 text-green-400"
               fill="currentColor"
               viewBox="0 0 20 20"
+              role="img"
+              aria-label="Verificado"
             >
               <path
                 fillRule="evenodd"
@@ -196,7 +198,7 @@ const HomePage = () => {
             Conexões diretas com:
           </p>
 
-          <div className="flex justify-center rounded-xl bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 p-3 shadow-lg sm:rounded-2xl sm:p-4">
+          <div className="flex justify-center rounded-xl bg-white backdrop-blur-sm border border-gray-700/50 p-3 shadow-lg sm:rounded-2xl sm:p-4">
             <Image
               src="/merchant.png"
               alt="Merchants parceiros"
@@ -218,14 +220,14 @@ const HomePage = () => {
       >
         <div className="flex max-w-sm items-center space-x-3 rounded-lg border-l-4 border-[#25D366] bg-gray-800/90 backdrop-blur-sm px-4 py-3 shadow-xl ring-1 ring-white/10">
           <div className="flex-shrink-0">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#25D366]">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-gray-600 to-gray-700 ring-2 ring-[#25D366]/50">
               <svg
                 viewBox="0 0 24 24"
-                className="h-5 w-5 text-white"
+                className="h-6 w-6 text-gray-300"
                 fill="currentColor"
                 aria-hidden="true"
               >
-                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.118.55 4.094 1.515 5.816L0 24l6.377-1.48A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0Zm0 21.6a9.57 9.57 0 0 1-4.89-1.33l-.351-.21-3.79 1.14 1.056-3.9-.229-.36A9.565 9.565 0 0 1 2.4 12c0-5.29 4.31-9.6 9.6-9.6 5.29 0 9.6 4.31 9.6 9.6 0 5.29-4.31 9.6-9.6 9.6Zm5.28-7.148c-.288-.144-1.706-.84-1.971-.936-.264-.096-.456-.144-.648.144-.192.288-.744.936-.912 1.128-.168.192-.336.216-.624.072-.288-.144-1.221-.45-2.332-1.432-.861-.738-1.431-1.65-1.599-1.938-.168-.288-.018-.45.126-.606.129-.129.288-.336.432-.504.144-.168.192-.288.288-.48.096-.192.048-.36-.024-.504-.072-.144-.648-1.569-.888-2.148-.234-.562-.468-.486-.648-.495-.168-.009-.36-.018-.552-.018-.192 0-.504.072-.768.36-.264.288-1.011.99-1.011 2.409 0 1.419 1.035 2.787 1.179 2.979.144.192 2.037 3.276 4.941 4.449 2.904 1.173 2.904.783 3.426.738.522-.045 1.71-.693 1.953-1.362.243-.669.243-1.242.18-1.362-.063-.12-.228-.192-.516-.336Z" />
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" />
               </svg>
             </div>
           </div>
