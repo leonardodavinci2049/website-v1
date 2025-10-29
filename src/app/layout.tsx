@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Promos da Mih - Black Friday está chegando!",
+  title: "Elly Indica - Black Friday está chegando!",
   description:
     "Prepare-se para receber as melhores promoções do maior evento do ano. Entre no grupo do Telegram com mais de 60.000 membros.",
 };
