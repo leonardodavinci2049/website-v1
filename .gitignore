@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# others
+/docs
+tasks-project-next.md
+.well-known
+ecosystem.config.js
+.github/copilot-instructions.md
