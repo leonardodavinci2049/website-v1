@@ -52,105 +52,139 @@ const HomePage = () => {
     };
   }, []);
   return (
-    <div className="safe-area-inset-x safe-area-inset-y flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-pink-400 via-purple-300 to-rose-200 px-4 py-8 sm:px-6">
+    <div className="safe-area-inset-x safe-area-inset-y flex min-h-screen flex-col items-center justify-center bg-black px-4 py-8 sm:px-6">
       <div className="xs:max-w-sm w-full max-w-xs space-y-4 text-center sm:max-w-md sm:space-y-4">
         {/* Logo */}
         <div className="flex justify-center">
-          <Image
-            src="/logo-promosdamih.jpeg"
-            alt="Promos da Mih"
-            width={100}
-            height={100}
-            className="rounded-full shadow-lg sm:h-[140px] sm:w-[140px]"
-          />
+          <div className="relative">
+            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 p-1 animate-pulse">
+              <div className="h-full w-full rounded-full bg-black"></div>
+            </div>
+            <div className="relative p-1">
+              <Image
+                src="/logo-elly-v2.png"
+                alt="Promos da Mih"
+                width={150}
+                height={150}
+                className="rounded-full shadow-2xl sm:h-[180px] sm:w-[180px]"
+              />
+            </div>
+          </div>
         </div>
 
         {/* Título com efeito de pulsação */}
         <div className="space-y-2 sm:space-y-3">
-          <h1 className="animate-grow-shrink mobile-small-title text-3xl leading-tight font-bold text-gray-900 sm:text-5xl">
+          <h1 className="animate-grow-shrink mobile-small-title text-3xl leading-tight font-bold text-white sm:text-5xl">
             A Black Friday
             <br />
             está chegando!
           </h1>
 
-          <p className="mobile-small xs:px-2 xs:text-base px-1 text-sm leading-relaxed text-gray-600 sm:px-0 sm:text-lg">
+          <p className="mobile-small xs:px-2 xs:text-base px-1 text-sm leading-relaxed text-gray-300 sm:px-0 sm:text-lg">
             Prepare-se para receber as melhores
             <br />
             promoções do maior evento do ano.
           </p>
         </div>
 
-        {/* Botões de contato */}
+        {/* Botão de Call to Action */}
         <div className="space-y-3">
-          {/* Botão do Telegram */}
-          <div className="rounded-2xl border border-gray-200 bg-white p-3 shadow-xl transition-shadow duration-300 active:shadow-lg sm:rounded-3xl sm:p-4 sm:hover:shadow-2xl">
+          {/* Botão Principal do WhatsApp */}
+          <div className="relative">
+            {/* Efeito de brilho animado no fundo */}
+            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-[#25D366] via-[#1EBE62] to-[#25D366] opacity-75 blur-lg animate-pulse"></div>
+
             <a
-              href="https://t.me/promosdamih"
+              href="https://chat.whatsapp.com/KFFvxdGfCb02HAH4dR1JNS"
               target="_blank"
               rel="noopener noreferrer"
-              className="group touch-target flex w-full items-center justify-between rounded-xl p-2 text-left transition-all duration-200 select-none active:bg-gray-100 sm:rounded-2xl sm:hover:bg-gray-50"
+              className="relative group flex w-full items-center justify-center gap-4 rounded-2xl bg-gradient-to-br from-[#25D366] to-[#128C7E] px-8 py-5 text-white shadow-2xl transition-all duration-300 transform select-none active:scale-[0.98] sm:hover:scale-[1.02] sm:hover:shadow-[0_20px_60px_-15px_rgba(37,211,102,0.6)] overflow-hidden"
             >
-              <div className="flex items-center space-x-3 sm:space-x-4">
-                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#0088cc] shadow-lg sm:h-10 sm:w-10">
-                  <svg
-                    viewBox="0 0 24 24"
-                    className="h-4 w-4 text-white sm:h-5 sm:w-5"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 2.1 11.75c-1.21-.35-1.22-1.22.26-1.81L21.26 2.2c1.01-.4 1.9.24 1.48 1.86L20.18 17.9c-.18.97-.72 1.21-1.47.75L14.51 16.5 11.9 19c-.39.39-.71.71-1.44.71-.94 0-.78-.35-.78-.78z" />
-                  </svg>
+              {/* Efeito de shine que passa pelo botão */}
+              <div className="absolute inset-0 -translate-x-full animate-[shimmer_3s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+
+              {/* Ícone do WhatsApp */}
+              <div className="relative flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-white shadow-lg">
+                <svg
+                  viewBox="0 0 24 24"
+                  className="h-8 w-8 text-[#25D366]"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path d="M12 0C5.373 0 0 5.373 0 12c0 2.118.55 4.094 1.515 5.816L0 24l6.377-1.48A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0Zm0 21.6a9.57 9.57 0 0 1-4.89-1.33l-.351-.21-3.79 1.14 1.056-3.9-.229-.36A9.565 9.565 0 0 1 2.4 12c0-5.29 4.31-9.6 9.6-9.6 5.29 0 9.6 4.31 9.6 9.6 0 5.29-4.31 9.6-9.6 9.6Zm5.28-7.148c-.288-.144-1.706-.84-1.971-.936-.264-.096-.456-.144-.648.144-.192.288-.744.936-.912 1.128-.168.192-.336.216-.624.072-.288-.144-1.221-.45-2.332-1.432-.861-.738-1.431-1.65-1.599-1.938-.168-.288-.018-.45.126-.606.129-.129.288-.336.432-.504.144-.168.192-.288.288-.48.096-.192.048-.36-.024-.504-.072-.144-.648-1.569-.888-2.148-.234-.562-.468-.486-.648-.495-.168-.009-.36-.018-.552-.018-.192 0-.504.072-.768.36-.264.288-1.011.99-1.011 2.409 0 1.419 1.035 2.787 1.179 2.979.144.192 2.037 3.276 4.941 4.449 2.904 1.173 2.904.783 3.426.738.522-.045 1.71-.693 1.953-1.362.243-.669.243-1.242.18-1.362-.063-.12-.228-.192-.516-.336Z" />
+                </svg>
+              </div>
+
+              {/* Texto do botão */}
+              <div className="relative flex-1 text-left">
+                <div className="text-lg font-black tracking-wide sm:text-xl">
+                  ENTRAR NO GRUPO VIP
                 </div>
-                <div className="text-left">
-                  <div className="text-sm font-bold text-gray-900 sm:text-base">
-                    Entre no grupo do Telegram
-                  </div>
-                  <div className="text-xs font-bold text-[#0088cc] uppercase">
-                    GRUPO VIP Vagas limitadas!
-                  </div>
+                <div className="text-sm font-semibold text-white/90 sm:text-base">
+                  🔥 Vagas Limitadas • Acesso Exclusivo
                 </div>
               </div>
+
+              {/* Ícone de seta */}
               <svg
-                className="h-4 w-4 text-gray-400 transition-colors duration-200 group-active:text-blue-500 sm:h-5 sm:w-5 sm:group-hover:text-blue-500"
+                className="relative h-6 w-6 flex-shrink-0 transition-transform duration-300 group-active:translate-x-1 sm:group-hover:translate-x-1"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
+                strokeWidth={3}
                 aria-hidden="true"
               >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
                 />
               </svg>
             </a>
+          </div>
+
+          {/* Badge de prova social */}
+          <div className="flex items-center justify-center gap-2 text-sm text-gray-400">
+            <svg
+              className="h-5 w-5 text-green-400"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <span className="font-medium">
+              Mais de 1.200 pessoas entraram hoje
+            </span>
           </div>
         </div>
 
         {/* Seção de Escassez */}
         <div
-          className={`space-y-2 rounded-2xl p-3 text-center sm:p-5 ${
+          className={`space-y-2 rounded-2xl bg-gradient-to-br from-red-500/10 to-orange-500/10 backdrop-blur-sm border border-red-500/20 p-3 text-center sm:p-5 ${
             availableSpots <= 50 ? "animate-pulse" : ""
           }`}
         >
-          <div className="text-xs font-bold tracking-widest text-red-600 uppercase sm:text-sm">
+          <div className="text-xs font-bold tracking-widest text-red-400 uppercase sm:text-sm">
             DISPONÍVEL
           </div>
           <div
             className={`font-black ${
               availableSpots <= 50
-                ? "animate-bounce text-3xl text-red-800 sm:text-4xl"
-                : "text-2xl text-red-700 sm:text-3xl"
+                ? "animate-bounce text-3xl text-red-300 sm:text-4xl"
+                : "text-2xl text-red-400 sm:text-3xl"
             }`}
           >
             {availableSpots} {availableSpots === 1 ? "VAGA" : "VAGAS"}
           </div>
-          <div className="text-sm font-semibold text-gray-700 sm:text-base">
+          <div className="text-sm font-semibold text-gray-300 sm:text-base">
             Já somos + 20 mil membros.
           </div>
           {availableSpots <= 20 && (
-            <div className="animate-pulse text-xs font-bold text-red-800 uppercase">
+            <div className="animate-pulse text-xs font-bold text-red-300 uppercase">
               ⚠️ ÚLTIMAS VAGAS!
             </div>
           )}
@@ -158,11 +192,11 @@ const HomePage = () => {
 
         {/* Texto e imagem dos merchants */}
         <div className="space-y-2 sm:space-y-2">
-          <p className="text-base font-semibold text-gray-700 sm:text-lg">
+          <p className="text-base font-semibold text-gray-300 sm:text-lg">
             Conexões diretas com:
           </p>
 
-          <div className="flex justify-center rounded-xl bg-white p-3 shadow-lg sm:rounded-2xl sm:p-4">
+          <div className="flex justify-center rounded-xl bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 p-3 shadow-lg sm:rounded-2xl sm:p-4">
             <Image
               src="/merchant.png"
               alt="Merchants parceiros"
@@ -182,32 +216,32 @@ const HomePage = () => {
             : "translate-x-full scale-95 opacity-0"
         }`}
       >
-        <div className="flex max-w-sm items-center space-x-3 rounded-lg border-l-4 border-[#0088cc] bg-white px-4 py-3 shadow-xl">
+        <div className="flex max-w-sm items-center space-x-3 rounded-lg border-l-4 border-[#25D366] bg-gray-800/90 backdrop-blur-sm px-4 py-3 shadow-xl ring-1 ring-white/10">
           <div className="flex-shrink-0">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0088cc]">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#25D366]">
               <svg
                 viewBox="0 0 24 24"
                 className="h-5 w-5 text-white"
                 fill="currentColor"
                 aria-hidden="true"
               >
-                <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 2.1 11.75c-1.21-.35-1.22-1.22.26-1.81L21.26 2.2c1.01-.4 1.9.24 1.48 1.86L20.18 17.9c-.18.97-.72 1.21-1.47.75L14.51 16.5 11.9 19c-.39.39-.71.71-1.44.71-.94 0-.78-.35-.78-.78z" />
+                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.118.55 4.094 1.515 5.816L0 24l6.377-1.48A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0Zm0 21.6a9.57 9.57 0 0 1-4.89-1.33l-.351-.21-3.79 1.14 1.056-3.9-.229-.36A9.565 9.565 0 0 1 2.4 12c0-5.29 4.31-9.6 9.6-9.6 5.29 0 9.6 4.31 9.6 9.6 0 5.29-4.31 9.6-9.6 9.6Zm5.28-7.148c-.288-.144-1.706-.84-1.971-.936-.264-.096-.456-.144-.648.144-.192.288-.744.936-.912 1.128-.168.192-.336.216-.624.072-.288-.144-1.221-.45-2.332-1.432-.861-.738-1.431-1.65-1.599-1.938-.168-.288-.018-.45.126-.606.129-.129.288-.336.432-.504.144-.168.192-.288.288-.48.096-.192.048-.36-.024-.504-.072-.144-.648-1.569-.888-2.148-.234-.562-.468-.486-.648-.495-.168-.009-.36-.018-.552-.018-.192 0-.504.072-.768.36-.264.288-1.011.99-1.011 2.409 0 1.419 1.035 2.787 1.179 2.979.144.192 2.037 3.276 4.941 4.449 2.904 1.173 2.904.783 3.426.738.522-.045 1.71-.693 1.953-1.362.243-.669.243-1.242.18-1.362-.063-.12-.228-.192-.516-.336Z" />
               </svg>
             </div>
           </div>
           <div className="min-w-0 flex-1">
-            <div className="text-sm font-semibold text-[#0088cc]">
-              Telegram Promos da Mih
+            <div className="text-sm font-semibold text-[#25D366]">
+              WhatsApp Promos da Mih
             </div>
-            <div className="text-sm text-gray-600">
-              <span className="font-bold text-gray-900">
+            <div className="text-sm text-gray-300">
+              <span className="font-bold text-white">
                 {currentNotification.name}
               </span>{" "}
               entrou no grupo
             </div>
           </div>
           <div className="flex-shrink-0">
-            <div className="h-2 w-2 animate-pulse rounded-full bg-[#0088cc]"></div>
+            <div className="h-2 w-2 animate-pulse rounded-full bg-[#25D366]"></div>
           </div>
         </div>
       </div>
