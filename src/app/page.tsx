@@ -98,16 +98,16 @@ const HomePage = () => {
               href="https://chat.whatsapp.com/KFFvxdGfCb02HAH4dR1JNS"
               target="_blank"
               rel="noopener noreferrer"
-              className="relative group flex w-full items-center justify-center gap-3 rounded-2xl bg-gradient-to-br from-[#25D366] to-[#128C7E] px-6 py-3.5 text-white shadow-2xl transition-all duration-300 transform select-none active:scale-[0.98] sm:hover:scale-[1.02] sm:hover:shadow-[0_20px_60px_-15px_rgba(37,211,102,0.6)] overflow-hidden"
+              className="relative group flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-br from-[#25D366] to-[#128C7E] px-3 py-2.5 text-white shadow-2xl transition-all duration-300 transform select-none active:scale-[0.98] sm:px-6 sm:py-3.5 sm:gap-3 sm:hover:scale-[1.02] sm:hover:shadow-[0_20px_60px_-15px_rgba(37,211,102,0.6)] overflow-hidden"
             >
               {/* Efeito de shine que passa pelo botão */}
               <div className="absolute inset-0 -translate-x-full animate-[shimmer_3s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
 
               {/* Ícone do WhatsApp */}
-              <div className="relative flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-white shadow-lg">
+              <div className="relative flex h-9 w-9 sm:h-11 sm:w-11 flex-shrink-0 items-center justify-center rounded-full bg-white shadow-lg">
                 <svg
                   viewBox="0 0 24 24"
-                  className="h-6 w-6 text-[#25D366]"
+                  className="h-5 w-5 sm:h-6 sm:w-6 text-[#25D366]"
                   fill="currentColor"
                   aria-hidden="true"
                 >
@@ -117,7 +117,7 @@ const HomePage = () => {
 
               {/* Texto do botão */}
               <div className="relative flex-1 text-left">
-                <div className="text-base font-black tracking-wide sm:text-lg">
+                <div className="text-sm font-black tracking-wide sm:text-base sm:text-lg">
                   ENTRAR NO GRUPO VIP
                 </div>
                 <div className="text-xs font-semibold text-white/90 sm:text-sm">
@@ -127,7 +127,7 @@ const HomePage = () => {
 
               {/* Ícone de seta */}
               <svg
-                className="relative h-5 w-5 flex-shrink-0 transition-transform duration-300 group-active:translate-x-1 sm:group-hover:translate-x-1"
+                className="relative h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0 transition-transform duration-300 group-active:translate-x-1 sm:group-hover:translate-x-1"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
