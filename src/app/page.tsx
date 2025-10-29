@@ -63,7 +63,7 @@ const HomePage = () => {
             <div className="relative p-1">
               <Image
                 src="/logo-elly-v2.png"
-                alt="Promos da Mih"
+                alt="Elly Indica"
                 width={150}
                 height={150}
                 className="rounded-full shadow-2xl sm:h-[180px] sm:w-[180px]"
@@ -233,7 +233,7 @@ const HomePage = () => {
           </div>
           <div className="min-w-0 flex-1">
             <div className="text-sm font-semibold text-[#25D366]">
-              WhatsApp Promos da Mih
+              WhatsApp Elly Indica
             </div>
             <div className="text-sm text-gray-300">
               <span className="font-bold text-white">
