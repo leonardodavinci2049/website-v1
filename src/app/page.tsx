@@ -223,7 +223,7 @@ const HomePage = () => {
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-gray-600 to-gray-700 ring-2 ring-[#25D366]/50">
               <svg
                 viewBox="0 0 24 24"
-                className="h-6 w-6 text-gray-300"
+                className="h-8 w-8 text-gray-300"
                 fill="currentColor"
                 aria-hidden="true"
               >
