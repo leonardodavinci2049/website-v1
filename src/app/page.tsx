@@ -57,7 +57,7 @@ const HomePage = () => {
         {/* Logo */}
         <div className="flex justify-center">
           <div className="relative">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 p-1 animate-pulse">
+            <div className="absolute inset-0 rounded-full bg-linear-to-tr from-yellow-400 via-pink-500 to-purple-600 p-1 animate-pulse">
               <div className="h-full w-full rounded-full bg-black"></div>
             </div>
             <div className="relative p-1">
@@ -92,19 +92,19 @@ const HomePage = () => {
           {/* Botão Principal do WhatsApp */}
           <div className="relative">
             {/* Efeito de brilho animado no fundo */}
-            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-[#25D366] via-[#1EBE62] to-[#25D366] opacity-40 blur-sm animate-pulse"></div>
+            <div className="absolute -inset-1 rounded-2xl bg-linear-to-r from-[#25D366] via-[#1EBE62] to-[#25D366] opacity-40 blur-sm animate-pulse"></div>
 
             <a
               href="https://chat.whatsapp.com/KFFvxdGfCb02HAH4dR1JNS"
               target="_blank"
               rel="noopener noreferrer"
-              className="relative group flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-br from-[#25D366] to-[#128C7E] px-3 py-2.5 text-white shadow-2xl transition-all duration-300 transform select-none active:scale-[0.98] sm:px-6 sm:py-3.5 sm:gap-3 sm:hover:scale-[1.02] sm:hover:shadow-[0_20px_60px_-15px_rgba(37,211,102,0.6)] overflow-hidden"
+              className="relative group flex w-full items-center justify-center gap-2 rounded-2xl bg-linear-to-br from-[#25D366] to-[#128C7E] px-3 py-2.5 text-white shadow-2xl transition-all duration-300 transform select-none active:scale-[0.98] sm:px-6 sm:py-3.5 sm:gap-3 sm:hover:scale-[1.02] sm:hover:shadow-[0_20px_60px_-15px_rgba(37,211,102,0.6)] overflow-hidden"
             >
               {/* Efeito de shine que passa pelo botão */}
-              <div className="absolute inset-0 -translate-x-full animate-[shimmer_3s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+              <div className="absolute inset-0 -translate-x-full animate-[shimmer_3s_infinite] bg-linear-to-r from-transparent via-white/20 to-transparent"></div>
 
               {/* Ícone do WhatsApp */}
-              <div className="relative flex h-9 w-9 sm:h-11 sm:w-11 flex-shrink-0 items-center justify-center rounded-full bg-white shadow-lg">
+              <div className="relative flex h-9 w-9 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-full bg-white shadow-lg">
                 <svg
                   viewBox="0 0 24 24"
                   className="h-5 w-5 sm:h-6 sm:w-6 text-[#25D366]"
@@ -117,7 +117,7 @@ const HomePage = () => {
 
               {/* Texto do botão */}
               <div className="relative flex-1 text-left">
-                <div className="text-sm font-black tracking-wide sm:text-base sm:text-lg">
+                <div className="text-sm font-black tracking-wide sm:text-lg">
                   ENTRAR NO GRUPO VIP
                 </div>
                 <div className="text-xs font-semibold text-white/90 sm:text-sm">
@@ -127,7 +127,7 @@ const HomePage = () => {
 
               {/* Ícone de seta */}
               <svg
-                className="relative h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0 transition-transform duration-300 group-active:translate-x-1 sm:group-hover:translate-x-1"
+                className="relative h-4 w-4 sm:h-5 sm:w-5 shrink-0 transition-transform duration-300 group-active:translate-x-1 sm:group-hover:translate-x-1"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -166,7 +166,7 @@ const HomePage = () => {
 
         {/* Seção de Escassez */}
         <div
-          className={`space-y-2 rounded-2xl bg-gradient-to-br from-red-500/10 to-orange-500/10 backdrop-blur-sm border border-red-500/20 p-3 text-center sm:p-5 ${
+          className={`space-y-2 rounded-2xl bg-linear-to-br from-red-500/10 to-orange-500/10 backdrop-blur-sm border border-red-500/20 p-3 text-center sm:p-5 ${
             availableSpots <= 50 ? "animate-pulse" : ""
           }`}
         >
@@ -219,11 +219,11 @@ const HomePage = () => {
         }`}
       >
         <div className="flex max-w-sm items-center space-x-3 rounded-lg border-l-4 border-[#25D366] bg-gray-800/90 backdrop-blur-sm px-4 py-3 shadow-xl ring-1 ring-white/10">
-          <div className="flex-shrink-0">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-gray-600 to-gray-700 ring-2 ring-[#25D366]/50">
+          <div className="shrink-0">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-linear-to-br from-gray-600 to-gray-700 ring-2 ring-[#25D366]/50">
               <svg
                 viewBox="0 0 24 24"
-                className="h-8 w-8 text-gray-300"
+                className="h-9 w-9 text-gray-300"
                 fill="currentColor"
                 aria-hidden="true"
               >
@@ -242,7 +242,7 @@ const HomePage = () => {
               entrou no grupo
             </div>
           </div>
-          <div className="flex-shrink-0">
+          <div className="shrink-0">
             <div className="h-2 w-2 animate-pulse rounded-full bg-[#25D366]"></div>
           </div>
         </div>
