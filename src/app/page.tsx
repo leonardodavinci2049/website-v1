@@ -78,7 +78,7 @@ const HomePage = () => {
             Casa, Moda e Beleza <br />
           </h1>
           <p className="mobile-small xs:px-2 xs:text-base px-1 text-sm leading-relaxed text-gray-300 sm:px-0 sm:text-lg">
-            As melhores promoções já estão rolando no grupo
+           As melhores promoções estão no grupo
           </p>
         </div>
 
