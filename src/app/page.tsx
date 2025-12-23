@@ -74,16 +74,11 @@ const HomePage = () => {
 
         {/* Título com efeito de pulsação */}
         <div className="space-y-2 sm:space-y-3">
-          <h1 className="animate-grow-shrink mobile-small-title text-3xl leading-tight font-bold text-white sm:text-5xl">
-            A Black Friday
-            <br />
-            está chegando!
+          <h1 className="animate-grow-shrink mobile-small-title text-2xl leading-tight font-bold text-white sm:text-3xl">
+            Casa, Moda e Beleza <br />
           </h1>
-
           <p className="mobile-small xs:px-2 xs:text-base px-1 text-sm leading-relaxed text-gray-300 sm:px-0 sm:text-lg">
-            Prepare-se para receber as melhores
-            <br />
-            promoções do maior evento do ano.
+            As melhores promoções já estão rolando no grupo
           </p>
         </div>
 
@@ -95,7 +90,7 @@ const HomePage = () => {
             <div className="absolute -inset-1 rounded-2xl bg-linear-to-r from-[#25D366] via-[#1EBE62] to-[#25D366] opacity-40 blur-sm animate-pulse"></div>
 
             <a
-              href="https://chat.whatsapp.com/Kaz29QEBuwvB6AkKVj6ZN1"
+              href="https://chat.whatsapp.com/DoFhS3ahzODBgsjgAtnaXR"
               target="_blank"
               rel="noopener noreferrer"
               className="relative group flex w-full items-center justify-center gap-2 rounded-2xl bg-linear-to-br from-[#25D366] to-[#128C7E] px-3 py-2.5 text-white shadow-2xl transition-all duration-300 transform select-none active:scale-[0.98] sm:px-6 sm:py-3.5 sm:gap-3 sm:hover:scale-[1.02] sm:hover:shadow-[0_20px_60px_-15px_rgba(37,211,102,0.6)] overflow-hidden"
@@ -142,6 +137,11 @@ const HomePage = () => {
               </svg>
             </a>
           </div>
+          <p className="mobile-small xs:px-2 xs:text-base px-1 text-sm leading-relaxed text-gray-300 sm:px-0 sm:text-lg">
+            🚨 <span className="font-bold">ENQUANTO VOCÊ DECIDE</span>
+            <br />
+            outras pessoas já estão ECONOMIZANDO!
+          </p>
 
           {/* Badge de prova social */}
           <div className="flex items-center justify-center gap-2 text-sm text-gray-400">
