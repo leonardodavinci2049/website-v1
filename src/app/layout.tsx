@@ -17,9 +17,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Elly Indica - Black Friday está chegando!",
+  title: "Elly Indica - Cupons e Promoções",
   description:
-    "Prepare-se para receber as melhores promoções do maior evento do ano. Entre no grupo do Telegram com mais de 60.000 membros.",
+    "Prepare-se para receber cupons e as melhores promoções. Entre nos nossos grupos. Já somos mais de 60.000 membros.",
 };
 
 export const viewport: Viewport = {
