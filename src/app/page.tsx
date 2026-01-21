@@ -90,7 +90,7 @@ const HomePage = () => {
             <div className="absolute -inset-1 rounded-2xl bg-linear-to-r from-[#25D366] via-[#1EBE62] to-[#25D366] opacity-40 blur-sm animate-pulse"></div>
 
             <a
-              href="https://chat.whatsapp.com/Fljn2OSYawXG3GYHYsz1hh"
+              href="https://chat.whatsapp.com/EpyRp8h5f2LCU1Kk1urQdc"
               target="_blank"
               rel="noopener noreferrer"
               className="relative group flex w-full items-center justify-center gap-2 rounded-2xl bg-linear-to-br from-[#25D366] to-[#128C7E] px-3 py-2.5 text-white shadow-2xl transition-all duration-300 transform select-none active:scale-[0.98] sm:px-6 sm:py-3.5 sm:gap-3 sm:hover:scale-[1.02] sm:hover:shadow-[0_20px_60px_-15px_rgba(37,211,102,0.6)] overflow-hidden"
