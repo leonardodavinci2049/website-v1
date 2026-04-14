@@ -24,3 +24,10 @@ node scripts/generate-schema.mjs
 
 
 ```
+
+## remover remoto
+```
+git rm -r --cached scripts/
+git commit -m "chore: remove scripts from tracking"
+git push
+```
