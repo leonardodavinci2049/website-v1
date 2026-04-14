@@ -66,6 +66,7 @@ const HomePage = () => {
                 alt="Elly Indica"
                 width={150}
                 height={150}
+                priority
                 className="rounded-full shadow-2xl sm:h-[180px] sm:w-[180px]"
               />
             </div>
