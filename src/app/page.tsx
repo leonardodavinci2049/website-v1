@@ -1,60 +1,23 @@
-"use client";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import brazilianNames from "../mock/brazilian-names.json";
+import HomeAvailabilityCard from "./_components/HomeAvailabilityCard";
+import HomeMemberNotification from "./_components/HomeMemberNotification";
 
-const HomePage = () => {
-  const [availableSpots, setAvailableSpots] = useState<number>(0);
-  const [currentNotification, setCurrentNotification] = useState<{
-    name: string;
-    visible: boolean;
-  }>({ name: "", visible: false });
+type HomePageContent = {
+  whatsappGroupUrl: string;
+};
 
-  useEffect(() => {
-    // Gera número inicial aleatório entre 20-30
-    const initialSpots = Math.floor(Math.random() * 11) + 20;
-    setAvailableSpots(initialSpots);
+async function getHomePageContent(): Promise<HomePageContent> {
+  return {
+    whatsappGroupUrl: "https://chat.whatsapp.com/EpyRp8h5f2LCU1Kk1urQdc",
+  };
+}
 
-    // Configura o contador decrescente
-    const spotsInterval = setInterval(() => {
-      setAvailableSpots((prev) => {
-        if (prev <= 1) {
-          return 1; // Para em 1 para manter urgência
-        }
-        // Decresce entre 1-3 vagas aleatoriamente a cada intervalo
-        const decrease = Math.floor(Math.random() * 3) + 1;
-        return Math.max(1, prev - decrease); // Garante que nunca fique menor que 1
-      });
-    }, 5000); // 5 segundos entre cada decremento
+export default async function HomePage() {
+  const { whatsappGroupUrl } = await getHomePageContent();
 
-    return () => clearInterval(spotsInterval);
-  }, []);
-
-  // Controla as notificações de novos membros no Telegram
-  useEffect(() => {
-    const showNotification = () => {
-      const randomIndex = Math.floor(
-        Math.random() * brazilianNames.names.length,
-      );
-      const selectedName = brazilianNames.names[randomIndex].name;
-      setCurrentNotification({ name: selectedName, visible: true });
-      setTimeout(() => {
-        setCurrentNotification((prev) => ({ ...prev, visible: false }));
-      }, 1500);
-    };
-    const initialTimeout = setTimeout(showNotification, 800);
-    const notificationInterval = setInterval(() => {
-      showNotification();
-    }, 10000);
-    return () => {
-      clearTimeout(initialTimeout);
-      clearInterval(notificationInterval);
-    };
-  }, []);
   return (
     <div className="safe-area-inset-x safe-area-inset-y flex min-h-screen flex-col items-center justify-center bg-black px-4 py-8 sm:px-6">
       <div className="xs:max-w-sm w-full max-w-xs space-y-4 text-center sm:max-w-md sm:space-y-4">
-        {/* Logo */}
         <div className="flex justify-center">
           <div className="relative">
             <div className="absolute inset-0 rounded-full bg-linear-to-tr from-yellow-400 via-pink-500 to-purple-600 p-1 animate-pulse">
@@ -67,13 +30,12 @@ const HomePage = () => {
                 width={150}
                 height={150}
                 priority
-                className="rounded-full shadow-2xl sm:h-[180px] sm:w-[180px]"
+                className="rounded-full shadow-2xl sm:h-45 sm:w-45"
               />
             </div>
           </div>
         </div>
 
-        {/* Título com efeito de pulsação */}
         <div className="space-y-2 sm:space-y-3">
           <h1 className="animate-grow-shrink mobile-small-title text-2xl leading-tight font-bold text-white sm:text-3xl">
             Casa, Moda e Beleza <br />
@@ -83,23 +45,18 @@ const HomePage = () => {
           </p>
         </div>
 
-        {/* Botão de Call to Action */}
         <div className="space-y-3">
-          {/* Botão Principal do WhatsApp */}
           <div className="relative">
-            {/* Efeito de brilho animado no fundo */}
             <div className="absolute -inset-1 rounded-2xl bg-linear-to-r from-[#25D366] via-[#1EBE62] to-[#25D366] opacity-40 blur-sm animate-pulse"></div>
 
             <a
-              href="https://chat.whatsapp.com/EpyRp8h5f2LCU1Kk1urQdc"
+              href={whatsappGroupUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="relative group flex w-full items-center justify-center gap-2 rounded-2xl bg-linear-to-br from-[#25D366] to-[#128C7E] px-3 py-2.5 text-white shadow-2xl transition-all duration-300 transform select-none active:scale-[0.98] sm:px-6 sm:py-3.5 sm:gap-3 sm:hover:scale-[1.02] sm:hover:shadow-[0_20px_60px_-15px_rgba(37,211,102,0.6)] overflow-hidden"
             >
-              {/* Efeito de shine que passa pelo botão */}
               <div className="absolute inset-0 -translate-x-full animate-[shimmer_3s_infinite] bg-linear-to-r from-transparent via-white/20 to-transparent"></div>
 
-              {/* Ícone do WhatsApp */}
               <div className="relative flex h-9 w-9 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-full bg-white shadow-lg">
                 <svg
                   viewBox="0 0 24 24"
@@ -111,7 +68,6 @@ const HomePage = () => {
                 </svg>
               </div>
 
-              {/* Texto do botão */}
               <div className="relative flex-1 text-left">
                 <div className="text-sm font-black tracking-wide sm:text-lg">
                   ENTRAR NO GRUPO VIP
@@ -121,7 +77,6 @@ const HomePage = () => {
                 </div>
               </div>
 
-              {/* Ícone de seta */}
               <svg
                 className="relative h-4 w-4 sm:h-5 sm:w-5 shrink-0 transition-transform duration-300 group-active:translate-x-1 sm:group-hover:translate-x-1"
                 fill="none"
@@ -144,7 +99,6 @@ const HomePage = () => {
             outras pessoas já estão ECONOMIZANDO!
           </p>
 
-          {/* Badge de prova social */}
           <div className="flex items-center justify-center gap-2 text-sm text-gray-400">
             <svg
               className="h-5 w-5 text-green-400"
@@ -165,35 +119,8 @@ const HomePage = () => {
           </div>
         </div>
 
-        {/* Seção de Escassez */}
-        <div
-          className={`space-y-2 rounded-2xl bg-linear-to-br from-red-500/10 to-orange-500/10 backdrop-blur-sm border border-red-500/20 p-3 text-center sm:p-5 ${
-            availableSpots <= 50 ? "animate-pulse" : ""
-          }`}
-        >
-          <div className="text-xs font-bold tracking-widest text-red-400 uppercase sm:text-sm">
-            DISPONÍVEL
-          </div>
-          <div
-            className={`font-black ${
-              availableSpots <= 50
-                ? "animate-bounce text-3xl text-red-300 sm:text-4xl"
-                : "text-2xl text-red-400 sm:text-3xl"
-            }`}
-          >
-            {availableSpots} {availableSpots === 1 ? "VAGA" : "VAGAS"}
-          </div>
-          <div className="text-sm font-semibold text-gray-300 sm:text-base">
-            Já somos + 20 mil membros.
-          </div>
-          {availableSpots <= 20 && (
-            <div className="animate-pulse text-xs font-bold text-red-300 uppercase">
-              ⚠️ ÚLTIMAS VAGAS!
-            </div>
-          )}
-        </div>
+        <HomeAvailabilityCard />
 
-        {/* Texto e imagem dos merchants */}
         <div className="space-y-2 sm:space-y-2">
           <p className="text-base font-semibold text-gray-300 sm:text-lg">
             Conexões diretas com:
@@ -205,51 +132,13 @@ const HomePage = () => {
               alt="Merchants parceiros"
               width={260}
               height={60}
-              className="h-auto w-full max-w-[260px] object-contain sm:max-w-[300px]"
+              className="h-auto w-full max-w-65 object-contain sm:max-w-75"
             />
           </div>
         </div>
       </div>
 
-      {/* Notificação de Novo Membro Telegram */}
-      <div
-        className={`fixed right-4 bottom-4 z-50 transform transition-all duration-700 ease-in-out ${
-          currentNotification.visible
-            ? "translate-x-0 scale-100 opacity-100"
-            : "translate-x-full scale-95 opacity-0"
-        }`}
-      >
-        <div className="flex max-w-sm items-center space-x-3 rounded-lg border-l-4 border-[#25D366] bg-gray-800/90 backdrop-blur-sm px-4 py-3 shadow-xl ring-1 ring-white/10">
-          <div className="shrink-0">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-linear-to-br from-gray-600 to-gray-700 ring-2 ring-[#25D366]/50">
-              <svg
-                viewBox="0 0 24 24"
-                className="h-9 w-9 text-gray-300"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" />
-              </svg>
-            </div>
-          </div>
-          <div className="min-w-0 flex-1">
-            <div className="text-sm font-semibold text-[#25D366]">
-              WhatsApp Elly Indica
-            </div>
-            <div className="text-sm text-gray-300">
-              <span className="font-bold text-white">
-                {currentNotification.name}
-              </span>{" "}
-              entrou no grupo
-            </div>
-          </div>
-          <div className="shrink-0">
-            <div className="h-2 w-2 animate-pulse rounded-full bg-[#25D366]"></div>
-          </div>
-        </div>
-      </div>
+      <HomeMemberNotification />
     </div>
   );
-};
-
-export default HomePage;
+}
