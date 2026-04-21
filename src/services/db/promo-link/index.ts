@@ -4,19 +4,19 @@ export type { PromoLinkFindLatestIdDto } from "./dto/promo_link_find_latest_id.d
 export type { PromoLinkFindLatestTypeDto } from "./dto/promo_link_find_latest_type.dto";
 export { default, PromoLinkService } from "./promo-link.service";
 export type {
-	HomeGroupLinks,
-	PromoLinkLatestTypeItem,
-	PromoLinkListItem,
-	PromoLinkTypeLinks,
+  HomeGroupLinks,
+  PromoLinkLatestTypeItem,
+  PromoLinkListItem,
+  PromoLinkTypeLinks,
 } from "./promo-link-cached-service";
 export {
-	getAllPromoLinks,
-	getHomeGroupLinks,
-	getLatestPromoLinkByType,
-	getLatestPromoLinksByType,
+  getAllPromoLinks,
+  getHomeGroupLinks,
+  getLatestPromoLinkByType,
+  getLatestPromoLinksByType,
 } from "./promo-link-cached-service";
 export type {
-	SpDefaultFeedback,
-	TblPromoLinkLatestTypeRecord,
-	TblPromoLinkRecord,
+  SpDefaultFeedback,
+  TblPromoLinkLatestTypeRecord,
+  TblPromoLinkRecord,
 } from "./types/promo-link.type";
