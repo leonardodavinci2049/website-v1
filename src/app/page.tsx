@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { getHomeGroupLinks } from "@/services/db/promo-link";
 import HomeAvailabilityCard from "./_components/HomeAvailabilityCard";
 import HomeMemberNotification from "./_components/HomeMemberNotification";
 
@@ -6,9 +7,19 @@ type HomePageContent = {
   whatsappGroupUrl: string;
 };
 
+function requireWhatsAppLink(link: string | null | undefined): string {
+  if (link?.trim()) {
+    return link;
+  }
+
+  throw new Error("Promo link WhatsApp não encontrado no banco de dados");
+}
+
 async function getHomePageContent(): Promise<HomePageContent> {
+  const groupLinks = await getHomeGroupLinks();
+
   return {
-    whatsappGroupUrl: "https://chat.whatsapp.com/EpyRp8h5f2LCU1Kk1urQdc",
+    whatsappGroupUrl: requireWhatsAppLink(groupLinks?.whatsapp),
   };
 }
 

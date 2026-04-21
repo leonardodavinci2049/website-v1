@@ -13,101 +13,101 @@ import { LogLoginFindAllQuery } from "./query/log_login_find_all.query";
 import { LogOperationCreateQuery } from "./query/log_operation_create.query";
 import { LogOperationFindAllQuery } from "./query/log_operation_find_all.query";
 import type {
-	SpResultRecordCreateType,
-	SpResultRecordLoginFindAllType,
-	SpResultRecordOperationFindAllType,
-	TblLogLoginFindAll,
-	TblLoglogOperationFindAll,
+  SpResultRecordCreateType,
+  SpResultRecordLoginFindAllType,
+  SpResultRecordOperationFindAllType,
+  TblLogLoginFindAll,
+  TblLoglogOperationFindAll,
 } from "./types/log.type";
 
 export class LogService {
-	async execLogLoginCreateQuery(dataJsonDto: unknown): Promise<ResultModel> {
-		try {
-			const validatedDto = validateLogLoginCreateDto(dataJsonDto);
+  async execLogLoginCreateQuery(dataJsonDto: unknown): Promise<ResultModel> {
+    try {
+      const validatedDto = validateLogLoginCreateDto(dataJsonDto);
 
-			const queryString = await LogLoginCreateQuery(validatedDto);
+      const queryString = await LogLoginCreateQuery(validatedDto);
 
-			const resultData = (await dbService.selectExecute(
-				queryString,
-			)) as unknown as SpResultRecordCreateType;
+      const resultData = (await dbService.selectExecute(
+        queryString,
+      )) as unknown as SpResultRecordCreateType;
 
-			return processProcedureResultMutation(
-				resultData as unknown[],
-				"Login log creation failed",
-			);
-		} catch (err) {
-			const errorMessage =
-				err instanceof Error ? err.message : MESSAGES.UNKNOWN_ERROR;
-			return new ResultModel(100404, errorMessage, "", []);
-		}
-	}
+      return processProcedureResultMutation(
+        resultData as unknown[],
+        "Login log creation failed",
+      );
+    } catch (err) {
+      const errorMessage =
+        err instanceof Error ? err.message : MESSAGES.UNKNOWN_ERROR;
+      return new ResultModel(100404, errorMessage, "", []);
+    }
+  }
 
-	async execLogLoginFindAllQuery(dataJsonDto: unknown): Promise<ResultModel> {
-		try {
-			const validatedDto = validateLogLoginFindAllDto(dataJsonDto);
+  async execLogLoginFindAllQuery(dataJsonDto: unknown): Promise<ResultModel> {
+    try {
+      const validatedDto = validateLogLoginFindAllDto(dataJsonDto);
 
-			const queryString = await LogLoginFindAllQuery(validatedDto);
+      const queryString = await LogLoginFindAllQuery(validatedDto);
 
-			const resultData = (await dbService.selectExecute(
-				queryString,
-			)) as unknown as SpResultRecordLoginFindAllType;
+      const resultData = (await dbService.selectExecute(
+        queryString,
+      )) as unknown as SpResultRecordLoginFindAllType;
 
-			return processProcedureResultQueryWithoutId<TblLogLoginFindAll>(
-				resultData as unknown[],
-				"Login logs not found",
-			);
-		} catch (err) {
-			const errorMessage =
-				err instanceof Error ? err.message : MESSAGES.UNKNOWN_ERROR;
-			return new ResultModel(100404, errorMessage, "", []);
-		}
-	}
+      return processProcedureResultQueryWithoutId<TblLogLoginFindAll>(
+        resultData as unknown[],
+        "Login logs not found",
+      );
+    } catch (err) {
+      const errorMessage =
+        err instanceof Error ? err.message : MESSAGES.UNKNOWN_ERROR;
+      return new ResultModel(100404, errorMessage, "", []);
+    }
+  }
 
-	async execLogOperationCreateQuery(
-		dataJsonDto: unknown,
-	): Promise<ResultModel> {
-		try {
-			const validatedDto = validateLogOperationCreateDto(dataJsonDto);
+  async execLogOperationCreateQuery(
+    dataJsonDto: unknown,
+  ): Promise<ResultModel> {
+    try {
+      const validatedDto = validateLogOperationCreateDto(dataJsonDto);
 
-			const queryString = await LogOperationCreateQuery(validatedDto);
+      const queryString = await LogOperationCreateQuery(validatedDto);
 
-			const resultData = (await dbService.selectExecute(
-				queryString,
-			)) as unknown as SpResultRecordCreateType;
+      const resultData = (await dbService.selectExecute(
+        queryString,
+      )) as unknown as SpResultRecordCreateType;
 
-			return processProcedureResultMutation(
-				resultData as unknown[],
-				"Operation log creation failed",
-			);
-		} catch (err) {
-			const errorMessage =
-				err instanceof Error ? err.message : MESSAGES.UNKNOWN_ERROR;
-			return new ResultModel(100404, errorMessage, "", []);
-		}
-	}
+      return processProcedureResultMutation(
+        resultData as unknown[],
+        "Operation log creation failed",
+      );
+    } catch (err) {
+      const errorMessage =
+        err instanceof Error ? err.message : MESSAGES.UNKNOWN_ERROR;
+      return new ResultModel(100404, errorMessage, "", []);
+    }
+  }
 
-	async execLogOperationFindAllQuery(
-		dataJsonDto: unknown,
-	): Promise<ResultModel> {
-		try {
-			const validatedDto = validateLogOperationFindAllDto(dataJsonDto);
+  async execLogOperationFindAllQuery(
+    dataJsonDto: unknown,
+  ): Promise<ResultModel> {
+    try {
+      const validatedDto = validateLogOperationFindAllDto(dataJsonDto);
 
-			const queryString = await LogOperationFindAllQuery(validatedDto);
+      const queryString = await LogOperationFindAllQuery(validatedDto);
 
-			const resultData = (await dbService.selectExecute(
-				queryString,
-			)) as unknown as SpResultRecordOperationFindAllType;
+      const resultData = (await dbService.selectExecute(
+        queryString,
+      )) as unknown as SpResultRecordOperationFindAllType;
 
-			return processProcedureResultQueryWithoutId<TblLoglogOperationFindAll>(
-				resultData as unknown[],
-				"Operation logs not found",
-			);
-		} catch (err) {
-			const errorMessage =
-				err instanceof Error ? err.message : MESSAGES.UNKNOWN_ERROR;
-			return new ResultModel(100404, errorMessage, "", []);
-		}
-	}
+      return processProcedureResultQueryWithoutId<TblLoglogOperationFindAll>(
+        resultData as unknown[],
+        "Operation logs not found",
+      );
+    } catch (err) {
+      const errorMessage =
+        err instanceof Error ? err.message : MESSAGES.UNKNOWN_ERROR;
+      return new ResultModel(100404, errorMessage, "", []);
+    }
+  }
 }
 
 const logService = new LogService();
